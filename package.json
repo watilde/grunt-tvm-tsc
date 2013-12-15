@@ -1,0 +1,21 @@
+{
+  "name": "grunt-tvm-tsc",
+  "version": "0.0.0",
+  "description": "Compile TypeScript files to JavaScript with TypeScript Version Manager.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watilde/grunt-tvm-tsc"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "Daijiro Wachi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watilde/grunt-tvm-tsc/issues"
+  }
+}
