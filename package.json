@@ -19,6 +19,6 @@
     "url": "https://github.com/watilde/grunt-tvm-tsc/issues"
   },
   "dependencies": {
-    "tvm": "~0.1.0"
+    "tvm": "*"
   }
 }
