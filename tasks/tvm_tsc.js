@@ -27,6 +27,7 @@ module.exports = function(grunt) {
       var validFiles = removeInvalidFiles(f);
       var destFiles  = f.dest;
       tvm.install(options.version);
+      tvm.use(options.version);
       tvm.tsc(validFiles + ' --out ' + destFiles);
     });
   };
