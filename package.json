@@ -25,10 +25,8 @@
   },
   "dependencies": {
     "tvm": "*",
-    "grunt": "~0.4.2",
     "async": "~0.2.9",
-  },
-  "devDependencies": {
+    "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0"
   }
 }
