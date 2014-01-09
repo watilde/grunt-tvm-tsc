@@ -26,9 +26,16 @@ module.exports = function(grunt) {
     this.files.forEach(function (f) {
       var validFiles = removeInvalidFiles(f);
       var destFiles  = f.dest;
-      tvm.install(options.version);
-      tvm.use(options.version);
-      tvm.tsc(validFiles + ' --out ' + destFiles);
+
+      async.waterfall([function (callback) {
+        tvm.install(options.version, callback);
+      }, function (callback) {
+        tvm.use(options.version, callback);
+      }, function (callback) {
+        tvm.tsc(validFiles + ' --out ' + destFiles, callback);
+      }, function () {
+        grunt.log.writeln('Done.');
+      }]);
     });
   };
 
