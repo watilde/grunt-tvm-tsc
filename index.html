@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Grunt-tvm-tsc by watilde</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Grunt-tvm-tsc</h1>
+        <p>Compile TypeScript files to JavaScript with TypeScript Version Manager.</p>
+
+        <p class="view"><a href="https://github.com/watilde/grunt-tvm-tsc">View the Project on GitHub <small>watilde/grunt-tvm-tsc</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/watilde/grunt-tvm-tsc/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/watilde/grunt-tvm-tsc/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/watilde/grunt-tvm-tsc">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="grunt-tvm-tsc" class="anchor" href="#grunt-tvm-tsc"><span class="octicon octicon-link"></span></a>grunt-tvm-tsc</h1>
+
+<blockquote>
+<p>Compile TypeScript files to JavaScript with TypeScript Version Manager.</p>
+</blockquote>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
+
+<pre lang="shell"><code>npm install grunt-tvm-tsc --save-dev
+</code></pre>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-tvm-tsc'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="compile-typescript-with-version-manager-task" class="anchor" href="#compile-typescript-with-version-manager-task"><span class="octicon octicon-link"></span></a>Compile TypeScript with Version Manager task</h2>
+
+<p><em>Run this task with the <code>grunt tvm_tsc</code> command.</em></p>
+
+<h2>
+<a name="usage-examples" class="anchor" href="#usage-examples"><span class="octicon octicon-link"></span></a>Usage Examples</h2>
+
+<div class="highlight highlight-js"><pre><span class="nx">tvm_tsc</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">all</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">version</span><span class="o">:</span> <span class="s1">'0.9.5'</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s1">'path/to/result.js'</span><span class="o">:</span> <span class="s1">'path/to/source.ts'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/watilde">watilde</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
