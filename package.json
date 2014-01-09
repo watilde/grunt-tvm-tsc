@@ -1,7 +1,7 @@
 {
   "name": "grunt-tvm-tsc",
   "version": "0.0.1",
-  "homepage": "https://github.com/watilde/grunt-tvm-tsc",
+  "homepage": "http://watilde.github.io/grunt-tvm-tsc/",
   "description": "Compile TypeScript files to JavaScript with TypeScript Version Manager.",
   "main": "Gruntfile.js",
   "scripts": {
