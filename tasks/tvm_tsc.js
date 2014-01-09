@@ -3,9 +3,8 @@ module.exports = function(grunt) {
   var taskName = 'tvm_tsc';
   var description = 'Compile TypeScript files into JavaScript with tvm';
   var async = require('async');
-  var path = require('path');
+  var fs = require('fs');
   var tvm = require('tvm');
-  var _ = grunt.util._;
 
   var taskFunction = function () {
     var options = this.options({
@@ -23,19 +22,29 @@ module.exports = function(grunt) {
       });
     };
 
+    var tvm_tsc = function (version, validFiles, destFiles) {
+      async.waterfall([function (callback) {
+        var exists = fs.existsSync(tvm.dirname.typescript + 'v' + version);
+        if (exists) {
+          callback();
+        } else {
+          tvm.install(options.version, callback);
+        }
+      }, function (callback) {
+        tvm.use(options.version, callback);
+      }, function () {
+        tvm.tsc(validFiles + ' --out ' + destFiles);
+        grunt.log.writeln('File ' + destFiles + ' created.');
+      }]);
+    };
+
+    var done = this.async();
+
     this.files.forEach(function (f) {
       var validFiles = removeInvalidFiles(f);
       var destFiles  = f.dest;
-
-      async.waterfall([function (callback) {
-        tvm.install(options.version, callback);
-      }, function (callback) {
-        tvm.use(options.version, callback);
-      }, function (callback) {
-        tvm.tsc(validFiles + ' --out ' + destFiles, callback);
-      }, function () {
-        grunt.log.writeln('Done.');
-      }]);
+      var version    = options.version;
+      tvm_tsc(version, validFiles, destFiles);
     });
   };
 
