@@ -43,3 +43,4 @@ var tom = new Horse("Tommy the Palomino");
 
 sam.move();
 tom.move(34);
+//# sourceMappingURL=SimpleInheritance.js.map

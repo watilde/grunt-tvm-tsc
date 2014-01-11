@@ -10,7 +10,11 @@ module.exports = function(grunt) {
     tvm_tsc: {
       all: {
         options: {
-          version: '0.9.5'
+          version: '0.9.5',   // default: latest
+          sourceMap: true,    // default: false
+          target: 'es5',      // default: es3
+          module: 'commonjs', // default: amd
+          declaration: true   // default: false
         },
         files: {
           'test/js/Raytracer.js': 'test/ts/Raytracer.ts',

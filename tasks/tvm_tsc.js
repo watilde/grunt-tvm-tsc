@@ -9,6 +9,10 @@ module.exports = function(grunt) {
   var taskFunction = function () {
     var options = this.options({
       version: 'latest',
+      sourceMap: false,
+      target: 'es3',
+      module: 'amd',
+      declaration: false
     });
 
     var removeInvalidFiles = function(files) {
@@ -22,7 +26,18 @@ module.exports = function(grunt) {
       });
     };
 
+    var getOptions = function(){
+      var option = '';
+      if (options.sourceMap) option += ' --sourcemap ';
+      if (options.target) option += ' --target ' + options.target + ' ';
+      if (options.module) option += ' --module ' + options.module + ' ';
+      if (options.declaration) option += ' --declaration ';
+      return option;
+    };
+
     var tvm_tsc = function (version, validFiles, destFiles) {
+      var option = getOptions();
+      console.log(option);
       async.waterfall([function (callback) {
         var exists = fs.existsSync(tvm.dirname.typescript + 'v' + version);
         if (exists) {
@@ -33,7 +48,7 @@ module.exports = function(grunt) {
       }, function (callback) {
         tvm.use(options.version, callback);
       }, function () {
-        tvm.tsc(validFiles + ' --out ' + destFiles);
+        tvm.tsc(option + validFiles + ' --out ' + destFiles);
         grunt.log.writeln('File ' + destFiles + ' created.');
       }]);
     };

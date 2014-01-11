@@ -18,14 +18,17 @@ grunt.loadNpmTasks('grunt-tvm-tsc');
 
 _Run this task with the `grunt tvm_tsc` command._
 
-
 ## Usage Examples
 
 ```js
 tvm_tsc: {
   all: {
     options: {
-      version: '0.9.5'
+      version: '0.9.5',
+      sourceMap: true,
+      target: 'es5',
+      module: 'commonjs',
+      declaration: true
     },
     files: {
       'path/to/result.js': 'path/to/source.ts'
@@ -33,3 +36,30 @@ tvm_tsc: {
   }
 }
 ```
+
+## Options
+### version
+Type: `String`
+Default: 'latest'
+Set tsc version
+
+### sourceMap
+Type: `Boolean`
+Default: false
+Compile JavaScript and create a .map file linking it to the TypeScript source.
+
+### target
+Type: `String`
+Default: 'es3'
+Specify ECMAScript target version: "ES3" (default), or "ES5"
+
+### module
+Type: `String`
+Default: 'amd'
+Specify module code generation: "commonjs" (default) or "amd"
+
+### declaration
+Type: `Boolean`
+Default: false
+Generates corresponding .d.ts file
+
