@@ -59,7 +59,11 @@
 <div class="highlight highlight-js"><pre><span class="nx">tvm_tsc</span><span class="o">:</span> <span class="p">{</span>
   <span class="nx">all</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">version</span><span class="o">:</span> <span class="s1">'0.9.5'</span>
+      <span class="nx">version</span><span class="o">:</span> <span class="s1">'0.9.5'</span><span class="p">,</span>
+      <span class="nx">sourceMap</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">target</span><span class="o">:</span> <span class="s1">'es5'</span><span class="p">,</span>
+      <span class="nx">module</span><span class="o">:</span> <span class="s1">'commonjs'</span><span class="p">,</span>
+      <span class="nx">declaration</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
       <span class="s1">'path/to/result.js'</span><span class="o">:</span> <span class="s1">'path/to/source.ts'</span>
@@ -67,6 +71,50 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<h3>
+<a name="version" class="anchor" href="#version"><span class="octicon octicon-link"></span></a>version</h3>
+
+<p>Type: <code>String</code>
+Default: 'latest'
+Set tsc version</p>
+
+<h3>
+<a name="sourcemap" class="anchor" href="#sourcemap"><span class="octicon octicon-link"></span></a>sourceMap</h3>
+
+<ul>
+<li>Type: <code>Boolean</code>
+</li>
+<li>Default: false</li>
+<li>Compile JavaScript and create a .map file linking it to the TypeScript source.</li>
+</ul><h3>
+<a name="target" class="anchor" href="#target"><span class="octicon octicon-link"></span></a>target</h3>
+
+<ul>
+<li>Type: <code>String</code>
+</li>
+<li>Default: 'es3'</li>
+<li>Specify ECMAScript target version: "ES3" (default), or "ES5"</li>
+</ul><h3>
+<a name="module" class="anchor" href="#module"><span class="octicon octicon-link"></span></a>module</h3>
+
+<ul>
+<li>Type: <code>String</code>
+</li>
+<li>Default: 'amd'</li>
+<li>Specify module code generation: "commonjs" (default) or "amd"</li>
+</ul><h3>
+<a name="declaration" class="anchor" href="#declaration"><span class="octicon octicon-link"></span></a>declaration</h3>
+
+<ul>
+<li>Type: <code>Boolean</code>
+</li>
+<li>Default: false</li>
+<li>Generates corresponding .d.ts file</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/watilde">watilde</a></p>
