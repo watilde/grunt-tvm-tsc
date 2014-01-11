@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       version: 'latest',
       sourceMap: false,
       target: 'es3',
-      module: 'amd',
+      module: 'commonjs',
       declaration: false
     });
 

@@ -27,7 +27,7 @@ tvm_tsc: {
       version: '0.9.5',
       sourceMap: true,
       target: 'es5',
-      module: 'commonjs',
+      module: 'amd',
       declaration: true
     },
     files: {
@@ -55,7 +55,7 @@ tvm_tsc: {
 
 ### module
 + Type: `String`
-+ Default: 'amd'
++ Default: 'commonjs'
 + Specify module code generation: "commonjs" (default) or "amd"
 
 ### declaration
