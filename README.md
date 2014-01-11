@@ -44,22 +44,22 @@ Default: 'latest'
 Set tsc version
 
 ### sourceMap
-Type: `Boolean`
-Default: false
-Compile JavaScript and create a .map file linking it to the TypeScript source.
++ Type: `Boolean`
++ Default: false
++ Compile JavaScript and create a .map file linking it to the TypeScript source.
 
 ### target
-Type: `String`
-Default: 'es3'
-Specify ECMAScript target version: "ES3" (default), or "ES5"
++ Type: `String`
++ Default: 'es3'
++ Specify ECMAScript target version: "ES3" (default), or "ES5"
 
 ### module
-Type: `String`
-Default: 'amd'
-Specify module code generation: "commonjs" (default) or "amd"
++ Type: `String`
++ Default: 'amd'
++ Specify module code generation: "commonjs" (default) or "amd"
 
 ### declaration
-Type: `Boolean`
-Default: false
-Generates corresponding .d.ts file
++ Type: `Boolean`
++ Default: false
++ Generates corresponding .d.ts file
 
