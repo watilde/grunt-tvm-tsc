@@ -41,7 +41,7 @@ tvm_tsc: {
 ### version
 + Type: `String`
 + Default: 'latest'
-+ Set tsc version
++ TypeScript compiler version
 
 ### sourceMap
 + Type: `Boolean`
