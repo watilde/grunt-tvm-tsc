@@ -39,9 +39,9 @@ tvm_tsc: {
 
 ## Options
 ### version
-Type: `String`
-Default: 'latest'
-Set tsc version
++ Type: `String`
++ Default: 'latest'
++ Set tsc version
 
 ### sourceMap
 + Type: `Boolean`
