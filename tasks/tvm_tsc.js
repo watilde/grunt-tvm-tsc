@@ -47,9 +47,8 @@ module.exports = function(grunt) {
       }, function (callback) {
         tvm.use(options.version, callback);
       }, function (callback) {
-        tvm.tsc(validFiles + ' --out ' + destFiles, callback);
+          tvm.tsc(option + validFiles + ' --out ' + destFiles, callback);
       }, function () {
-        tvm.tsc(option + validFiles + ' --out ' + destFiles);
         grunt.log.writeln('File ' + destFiles + ' created.');
         end();
       }]);
