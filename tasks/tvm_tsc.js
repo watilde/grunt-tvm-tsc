@@ -12,7 +12,8 @@ module.exports = function(grunt) {
       sourceMap: false,
       target: 'es3',
       module: 'commonjs',
-      declaration: false
+      declaration: false,
+      removeComments: false
     });
 
     var removeInvalidFiles = function(files) {
@@ -32,6 +33,7 @@ module.exports = function(grunt) {
       if (options.target) option += ' --target ' + options.target + ' ';
       if (options.module) option += ' --module ' + options.module + ' ';
       if (options.declaration) option += ' --declaration ';
+      if (options.removeComments) option += ' --removeComments ';
       return option;
     };
 

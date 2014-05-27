@@ -28,7 +28,8 @@ tvm_tsc: {
       sourceMap: true,
       target: 'es5',
       module: 'amd',
-      declaration: true
+      declaration: true,
+      removeComments: true
     },
     files: {
       'path/to/result.js': 'path/to/source.ts'
@@ -63,3 +64,7 @@ tvm_tsc: {
 + Default: false
 + Generates corresponding .d.ts file
 
+### removeComments
++ Type: `Boolean`
++ Default: false
++ Remove comments
