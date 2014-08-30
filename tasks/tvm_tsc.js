@@ -39,7 +39,6 @@ module.exports = function(grunt) {
       }, function (callback) {
         tvm.use(options.version, callback);
       }, function (callback) {
-        console.log(option + validFiles + ' --out ' + destFiles);
           tvm.tsc(option + validFiles + ' --out ' + destFiles, callback);
       }, function () {
         grunt.log.writeln('File ' + destFiles + ' created.');
