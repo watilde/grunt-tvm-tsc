@@ -24,17 +24,13 @@ _Run this task with the `grunt tvm_tsc` command._
 tvm_tsc: {
   all: {
     options: {
-      version: '0.9.5',
-      sourceMap: true,
-      target: 'es5',
-      module: 'amd',
-      declaration: true,
-      removeComments: true
+      version: '1.0.1', // default: latest
+      option: '--target ES5 --removeComments'
     },
     files: {
       'path/to/result.js': 'path/to/source.ts'
-    }
-  }
+   }
+ }
 }
 ```
 
@@ -44,27 +40,7 @@ tvm_tsc: {
 + Default: 'latest'
 + TypeScript compiler version
 
-### sourceMap
-+ Type: `Boolean`
-+ Default: false
-+ Compile JavaScript and create a .map file linking it to the TypeScript source.
-
-### target
+### option
 + Type: `String`
-+ Default: 'es3'
-+ Specify ECMAScript target version: "ES3" (default), or "ES5"
-
-### module
-+ Type: `String`
-+ Default: 'commonjs'
-+ Specify module code generation: "commonjs" (default) or "amd"
-
-### declaration
-+ Type: `Boolean`
-+ Default: false
-+ Generates corresponding .d.ts file
-
-### removeComments
-+ Type: `Boolean`
-+ Default: false
-+ Remove comments
++ Default: empty
++ tsc Command-line argument as option: tsc [options]

@@ -10,12 +10,8 @@ module.exports = function(grunt) {
     tvm_tsc: {
       all: {
         options: {
-          version: '1.0.1',    // default: latest
-          sourceMap: true,     // default: false
-          target: 'es5',       // default: es3
-          module: 'commonjs',  // default: amd
-          declaration: true,   // default: false
-          removeComments: true // default: false
+          version: '1.0.1', // default: latest
+          option: '--target ES5 --removeComments'
         },
         files: {
           'test/js/Raytracer.js': 'test/ts/Raytracer.ts',
@@ -29,5 +25,5 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', ['jshint', 'tvm_tsc']);
+  grunt.registerTask('test', ['jshint', 'tvm_tsc']);
 };
