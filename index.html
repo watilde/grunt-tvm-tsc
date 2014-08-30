@@ -1,33 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Grunt-tvm-tsc by watilde</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>grunt-tvm-tsc by watilde</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/watilde/grunt-tvm-tsc">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1>Grunt-tvm-tsc</h1>
-        <p>Compile TypeScript files to JavaScript with TypeScript Version Manager.</p>
-
-        <p class="view"><a href="https://github.com/watilde/grunt-tvm-tsc">View the Project on GitHub <small>watilde/grunt-tvm-tsc</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/watilde/grunt-tvm-tsc/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/watilde/grunt-tvm-tsc/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/watilde/grunt-tvm-tsc">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>grunt-tvm-tsc</h1>
+            <h2>Compile TypeScript files to JavaScript with TypeScript Version Manager.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/watilde/grunt-tvm-tsc/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/watilde/grunt-tvm-tsc/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h1>
 <a name="grunt-tvm-tsc" class="anchor" href="#grunt-tvm-tsc"><span class="octicon octicon-link"></span></a>grunt-tvm-tsc</h1>
 
@@ -51,7 +69,7 @@
 <h2>
 <a name="compile-typescript-with-version-manager-task" class="anchor" href="#compile-typescript-with-version-manager-task"><span class="octicon octicon-link"></span></a>Compile TypeScript with Version Manager task</h2>
 
-<p><em>Run this task with the `grunt tvm</em>tsc` command._</p>
+<p><em>Run this task with the <code>grunt tvm_tsc</code> command.</em></p>
 
 <h2>
 <a name="usage-examples" class="anchor" href="#usage-examples"><span class="octicon octicon-link"></span></a>Usage Examples</h2>
@@ -59,16 +77,13 @@
 <div class="highlight highlight-js"><pre><span class="nx">tvm_tsc</span><span class="o">:</span> <span class="p">{</span>
   <span class="nx">all</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">version</span><span class="o">:</span> <span class="s1">'0.9.5'</span><span class="p">,</span>
-      <span class="nx">sourceMap</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">target</span><span class="o">:</span> <span class="s1">'es5'</span><span class="p">,</span>
-      <span class="nx">module</span><span class="o">:</span> <span class="s1">'amd'</span><span class="p">,</span>
-      <span class="nx">declaration</span><span class="o">:</span> <span class="kc">true</span>
+      <span class="nx">version</span><span class="o">:</span> <span class="s1">'1.0.1'</span><span class="p">,</span> <span class="c1">// default: latest</span>
+      <span class="nx">option</span><span class="o">:</span> <span class="s1">'--target ES5 --removeComments'</span>
     <span class="p">},</span>
     <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
       <span class="s1">'path/to/result.js'</span><span class="o">:</span> <span class="s1">'path/to/source.ts'</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -84,45 +99,30 @@
 <li>Default: 'latest'</li>
 <li>TypeScript compiler version</li>
 </ul><h3>
-<a name="sourcemap" class="anchor" href="#sourcemap"><span class="octicon octicon-link"></span></a>sourceMap</h3>
-
-<ul>
-<li>Type: <code>Boolean</code>
-</li>
-<li>Default: false</li>
-<li>Compile JavaScript and create a .map file linking it to the TypeScript source.</li>
-</ul><h3>
-<a name="target" class="anchor" href="#target"><span class="octicon octicon-link"></span></a>target</h3>
+<a name="option" class="anchor" href="#option"><span class="octicon octicon-link"></span></a>option</h3>
 
 <ul>
 <li>Type: <code>String</code>
 </li>
-<li>Default: 'es3'</li>
-<li>Specify ECMAScript target version: "ES3" (default), or "ES5"</li>
-</ul><h3>
-<a name="module" class="anchor" href="#module"><span class="octicon octicon-link"></span></a>module</h3>
-
-<ul>
-<li>Type: <code>String</code>
-</li>
-<li>Default: 'commonjs'</li>
-<li>Specify module code generation: "commonjs" (default) or "amd"</li>
-</ul><h3>
-<a name="declaration" class="anchor" href="#declaration"><span class="octicon octicon-link"></span></a>declaration</h3>
-
-<ul>
-<li>Type: <code>Boolean</code>
-</li>
-<li>Default: false</li>
-<li>Generates corresponding .d.ts file</li>
+<li>Default: empty</li>
+<li>tsc Command-line argument as option: tsc [options]</li>
 </ul>
       </section>
+
       <footer>
-        <p>This project is maintained by <a href="https://github.com/watilde">watilde</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/watilde">watilde</a> can be found on <a href="https://github.com/watilde/grunt-tvm-tsc">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
