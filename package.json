@@ -27,6 +27,6 @@
     "tvm": "*",
     "async": "^0.9.0",
     "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.11.2"
   }
 }
